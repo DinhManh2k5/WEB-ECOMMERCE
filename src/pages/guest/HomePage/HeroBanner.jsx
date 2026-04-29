@@ -2,7 +2,7 @@ export default function HeroBanner() {
   return (
     <section
       className="relative rounded-[2.5rem] overflow-hidden
-                        aspect-[21/9] sm:aspect-[3/1] bg-slate-900
+                        aspect-21/9 sm:aspect-3/1 bg-slate-900
                         border border-[#1e293b] group"
     >
       <img
@@ -11,7 +11,7 @@ export default function HeroBanner() {
         className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/40 to-transparent
+        className="absolute inset-0 bg-linear-to-r from-[#020617] via-[#020617]/40 to-transparent
                       flex items-center px-10 sm:px-20"
       >
         <div className="max-w-xl space-y-6">
@@ -33,7 +33,7 @@ export default function HeroBanner() {
           <div className="flex gap-4 pt-4">
             <button
               className="px-10 py-4 text-white font-black rounded-2xl
-                               bg-gradient-to-br from-indigo-500 to-indigo-700
+                               bg-linear-to-br from-indigo-500 to-indigo-700
                                hover:shadow-2xl hover:shadow-indigo-500/40
                                transition-all hover:-translate-y-1"
             >

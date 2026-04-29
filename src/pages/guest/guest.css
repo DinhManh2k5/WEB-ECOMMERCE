@@ -1,15 +1,10 @@
-html, body{
-    height: 100%;
-    overflow: scroll;
-}
-
-@theme{
-    "primary": "#6366f1",
-    "primary-dark": "#4f46e5",
-    "accent": "#818cf8",
-    "background-dark": "#020617",
-    "surface-dark": "#0f172a",
-    "border-dark": "#1e293b",
+@theme {
+    --primary: "#6366f1",
+    --primary-dark: "#4f46e5",
+    --accent: "#818cf8",
+    --background-dark: "#020617",
+    --surface-dark: "#0f172a",
+    --border-dark: "#1e293b",
 }
 
 .glass {

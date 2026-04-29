@@ -4,9 +4,9 @@ import GuestFooter from "./Footer";
 
 export default function GuestLayout() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#020617] text-slate-100">
+    <div className="flex flex-col min-h-screen bg-[#020617] text-slate-100">
       <GuestHeader />
-      <main className="flex-grow">
+      <main className="flex-1">
         <Outlet />
       </main>
       <GuestFooter />

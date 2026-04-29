@@ -1,8 +1,8 @@
 html, body {
-  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* Reset button về mặc định để Tailwind kiểm soát hoàn toàn */
 *,
 *::before,
 *::after {
@@ -14,8 +14,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #fcf8ff;
-  color: #1b1b23;
+  background-color: #020617;
+  color: #e2e8f0;
 }
 
 button {

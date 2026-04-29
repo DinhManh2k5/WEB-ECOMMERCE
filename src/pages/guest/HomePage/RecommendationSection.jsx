@@ -44,7 +44,7 @@ export default function RecommendationSection() {
       <div className="flex items-center gap-4 mb-10">
         <div
           className="size-12 text-white rounded-xl flex items-center justify-center
-                        bg-gradient-to-br from-indigo-500 to-indigo-700
+                        bg-linear-to-br from-indigo-500 to-indigo-700
                         shadow-lg shadow-indigo-500/20 text-xl"
         >
           🧠

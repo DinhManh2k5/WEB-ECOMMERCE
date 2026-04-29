@@ -7,7 +7,7 @@ export default function RecommendationProductCard({
   return (
     <div className="flex flex-col gap-4 group cursor-pointer">
       <div
-        className="aspect-[4/5] rounded-[2rem] overflow-hidden relative
+        className="aspect-4/5 rounded-4xl overflow-hidden relative
                       bg-[#0f172a] border border-[#1e293b]
                       group-hover:border-indigo-500/30 transition-all"
       >
