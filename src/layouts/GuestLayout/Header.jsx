@@ -1,20 +1,17 @@
-const NAV_LINKS = ["Marketplace", "Security", "Status"];
+import { Link, useLocation } from "react-router-dom";
+
 const SUB_LINKS = [
-  "Intelligence",
-  "Quantum Drops",
-  "Nexus Hub",
-  "Hardware",
-  "Ecosystem",
-  "Protocols",
+  { title: "Home", links: "/" },
+  { title: "Product", links: "/products" },
+  { title: "Discount Code", links: "/discount-codes" },
+  { title: "Contact", links: "/contact" },
 ];
 
 export default function GuestHeader() {
+  const location = useLocation(); // lấy path hiện tại
+
   return (
-    <header
-      className="sticky top-0 z-50 backdrop-blur-xl
-                       border-b border-white/10 bg-slate-950/80
-                       shadow-[0px_10px_40px_rgba(79,70,229,0.1)]"
-    >
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Main nav */}
         <div className="flex items-center justify-between h-20 gap-4">
@@ -28,7 +25,7 @@ export default function GuestHeader() {
               🚀
             </div>
             <span className="text-2xl font-extrabold tracking-tight text-white hidden sm:block">
-              Shop<span className="text-indigo-500">Indigo</span>
+              <span className="text-indigo-500">Fashion</span>Shop
             </span>
           </div>
 
@@ -43,27 +40,28 @@ export default function GuestHeader() {
               </span>
               <input
                 type="text"
-                placeholder="Discover the future of tech..."
-                className="w-full pl-12 pr-24 py-3 text-sm rounded-2xl
+                placeholder="Enter product name or code..."
+                className="block w-full pl-12 pr-24 py-3 bg-slate-100 dark:bg-slate-800 text-sm rounded-2xl
                            bg-[#0f172a]/50 border border-[#1e293b]
                            focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500
                            placeholder:text-slate-500 outline-none transition-all"
               />
+
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 gap-1">
+                <button className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-slate-500 transition-colors">
+                  <span className="material-symbols-outlined text-xl">mic</span>
+                </button>
+                <button className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-slate-500 transition-colors">
+                  <span className="material-symbols-outlined text-xl">
+                    photo_camera
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Controls */}
           <div className="flex items-center gap-3">
-            <div
-              className="hidden lg:flex flex-col items-end px-4 py-1
-                            border-r border-[#1e293b]"
-            >
-              <span className="text-[10px] uppercase font-black tracking-widest text-indigo-500">
-                Elite Alpha
-              </span>
-              <span className="text-xs font-bold text-slate-300">2,450 XP</span>
-            </div>
-
             <button
               className="relative p-2.5 text-slate-400 hover:bg-white/5
                                rounded-xl border border-transparent hover:border-[#1e293b]
@@ -84,35 +82,32 @@ export default function GuestHeader() {
             >
               🛍️ <span className="hidden sm:inline">Checkout (3)</span>
             </button>
+            <div class="size-10 rounded-xl bg-surface-dark overflow-hidden ring-2 ring-primary/20 border border-border-dark">
+              <img
+                alt="User Profile Avatar"
+                data-alt="Close up portrait of a smiling user"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB2Z_9V7X5vbcCN3eUITwcp8hcOq4bcYU3vGW_hDQDZjA9MuqOsgjjSYe-hL_55sFyH4xIOf7hOMTClEDyIGyEsKAeyyaKILsot3EwJLyWhHnZiSE8U43O61hdG2IWkd9Mj3_i6lxcNgdY6PHFFxgZ57jM9-uQD4iTT5bz5G2ayulgt5p_dkc2cYQ7Ns30tQRshM3dTMBSZVsyle8vB64hHrZMEmcB_aKPV5wyqhI4vnPInGyFe9zwK0Ag4qi2XugnBnKvWzXTUgU"
+              />
+            </div>
           </div>
         </div>
 
         {/* Sub nav */}
-        <nav
-          className="flex items-center gap-8 h-12 text-sm font-semibold
-                        text-slate-400 overflow-x-auto
-                        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-        >
-          {SUB_LINKS.map((link, i) => (
-            <a
-              key={link}
-              href="#"
-              className={`whitespace-nowrap transition-colors h-full flex items-center
-                          ${
-                            i === 0
-                              ? "text-white border-b-2 border-indigo-500"
-                              : "hover:text-indigo-500"
-                          }`}
+        <nav className="flex items-center gap-8 h-12 text-lg font-semibold text-slate-600 dark:text-slate-400 overflow-x-auto no-scrollbar">
+          {SUB_LINKS.map((p) => (
+            <Link
+              key={p.title}
+              to={p.links}
+              className={`flex items-center gap-1 text-slate-900 dark:text-white h-full px-1 
+      ${
+        location.pathname === p.links
+          ? "!text-indigo-500 border-b-2 border-indigo-500"
+          : "hover:text-indigo-500"
+      }`}
             >
-              {link}
-            </a>
+              {p.title}
+            </Link>
           ))}
-          <a
-            href="#"
-            className="ml-auto whitespace-nowrap font-black italic tracking-tighter text-indigo-500"
-          >
-            SYSTEM_UPGRADE_50%_OFF
-          </a>
         </nav>
       </div>
     </header>

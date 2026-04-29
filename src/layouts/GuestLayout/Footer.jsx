@@ -42,7 +42,7 @@ export default function GuestFooter() {
                 🚀
               </div>
               <span className="text-2xl font-black tracking-tight">
-                Shop<span className="text-indigo-500">Indigo</span>
+                <span className="text-indigo-500">Fashion</span>Shop
               </span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -96,8 +96,8 @@ export default function GuestFooter() {
               <input
                 type="email"
                 placeholder="user@matrix.com"
-                className="w-full px-5 py-3.5 rounded-2xl text-sm
-                           bg-[#020617] border border-[#1e293b]
+                className="w-full px-5 py-3.5 rounded-2xl text-sl font-semibold
+                           bg-white border border-[#2758a7]
                            focus:ring-2 focus:ring-indigo-500/50 outline-none
                            placeholder:text-slate-600 transition-all"
               />
@@ -110,23 +110,6 @@ export default function GuestFooter() {
                 SYNC_NOW
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div
-          className="pt-10 border-t border-[#1e293b] flex flex-col md:flex-row
-                        justify-between items-center gap-6
-                        text-[10px] font-black uppercase tracking-[0.15em] text-slate-600"
-        >
-          <p>© 2024 SHOPINDIGO NEURAL NETWORK. ALL SYSTEMS OPERATIONAL.</p>
-          <div className="flex gap-10">
-            <span className="hover:text-indigo-500 transition-colors cursor-pointer">
-              🌐 LANG_EN
-            </span>
-            <span className="hover:text-indigo-500 transition-colors cursor-pointer">
-              🪙 CURRENCY_USD
-            </span>
           </div>
         </div>
       </div>

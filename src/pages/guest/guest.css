@@ -1,5 +1,7 @@
 @theme {
-    --primary: "#6366f1",
+    --primary: "#ec5b13",
+    "background-light": "#f8f6f6",
+    "background-dark": "#221610",
     --primary-dark: "#4f46e5",
     --accent: "#818cf8",
     --background-dark: "#020617",
